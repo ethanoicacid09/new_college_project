@@ -332,36 +332,9 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="gradient-bg text-white min-h-full flex items-center pt-16">
-        <!--ssearch bar-->
-          <div class="mt-4 fade-in flex justify-center">
-                        <div class="relative z-10 max-w-lg">
-                            <input 
-                                type="text" 
-                                id="search-input"
-                                placeholder="Search herbs, courses, or wellness tips..." 
-                                class="w-full pl-12 pr-12 py-3 bg-white/20 dark:bg-gray-800/30 backdrop-blur-sm border border-white/30 dark:border-gray-600/30 rounded-full text-white dark:text-white placeholder-white/70 dark:placeholder-gray-300/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-300 text-lg"
-                                oninput="handleSearch(this.value)"
-                                onfocus="showSearchSuggestions()"
-                                onblur="hideSearchSuggestions()"
-                            >
-                            <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/70 dark:text-gray-300/70 text-xl">
-                                🔍
-                            </div>
-                            <button onclick="clearSearch()" id="clear-search" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/70 hover:text-white dark:hover:text-gray-200 hidden text-lg">
-                                ✕
-                            </button>
-                            
-    <!-- Search Suggestions Dropdown -->
-                            <div id="search-suggestions" class="absolute top-full left-0 right-0 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg mt-2 max-h-80 overflow-y-auto z-50 hidden">
-                                <div class="p-3">
-                                    <div class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">Popular Searches</div>
-                                    <div id="search-results"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section id="home" class="gradient-bg text-white min-h-screen flex items-center pt-24 pb=24">
+        
+        <div class="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 py-24">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">
@@ -1481,6 +1454,7 @@ What began as a side project to help friends unwind during exams quickly grew in
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98dfc081175bbdd5',t:'MTc2MDM2ODEwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
 
