@@ -1,64 +1,119 @@
 // script.js
 
 // Cart Management
-let cart = [];
+class Cart {
+    constructor() {
+        this.items = [];
+    }
 
-function addToCart(item) {
-    cart.push(item);
-    updateCartDisplay();
+    addItem(item) {
+        this.items.push(item);
+        this.updateLocalStorage();
+    }
+
+    removeItem(itemId) {
+        this.items = this.items.filter(item => item.id !== itemId);
+        this.updateLocalStorage();
+    }
+
+    getItems() {
+        return this.items;
+    }
+
+    updateLocalStorage() {
+        localStorage.setItem('cart', JSON.stringify(this.items));
+    }
 }
 
-function removeFromCart(item) {
-    cart = cart.filter(cartItem => cartItem !== item);
-    updateCartDisplay();
+// Authentication
+class Auth {
+    login(username, password) {
+        // Handle login
+    }
+
+    logout() {
+        // Handle logout
+    }
+
+    register(userData) {
+        // Handle registration
+    }
 }
 
-function updateCartDisplay() {
-    console.log(`Cart: ${JSON.stringify(cart)}`);
+// Search
+function search(items, query) {
+    return items.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
+}
+
+// Wishlist
+class Wishlist {
+    constructor() {
+        this.items = [];
+    }
+
+    addItem(item) {
+        this.items.push(item);
+        this.updateLocalStorage();
+    }
+
+    removeItem(itemId) {
+        this.items = this.items.filter(item => item.id !== itemId);
+        this.updateLocalStorage();
+    }
+
+    getItems() {
+        return this.items;
+    }
+
+    updateLocalStorage() {
+        localStorage.setItem('wishlist', JSON.stringify(this.items));
+    }
+}
+
+// Orders
+class Orders {
+    constructor() {
+        this.orders = [];
+    }
+
+    placeOrder(order) {
+        this.orders.push(order);
+        this.updateLocalStorage();
+    }
+
+    getOrders() {
+        return this.orders;
+    }
+
+    updateLocalStorage() {
+        localStorage.setItem('orders', JSON.stringify(this.orders));
+    }
+}
+
+// Notifications
+function notify(message) {
+    console.log('Notification:', message);
 }
 
 // Theme Toggle
-let isDarkMode = false;
-
-function toggleTheme() {
-    isDarkMode = !isDarkMode;
-    document.body.classList.toggle('dark-mode', isDarkMode);
-}
-
-// Sidebar Navigation
-function openSidebar() {
-    document.getElementById('sidebar').style.width = '250px';
-}
-
-function closeSidebar() {
-    document.getElementById('sidebar').style.width = '0';
-}
-
-// Search Functionality
-function searchItems(query) {
-    // Implement search logic here
-    console.log(`Searching for: ${query}`);
-}
-
-// Authentication Management
-let isAuthenticated = false;
-
-function login(username, password) {
-    // Implement login logic here
-    isAuthenticated = true;
-    console.log(`User ${username} logged in`);
-}
-
-function logout() {
-    // Implement logout logic here
-    isAuthenticated = false;
-    console.log(`User logged out`);
-}
+const themeToggle = () => {
+    const body = document.body;
+    body.classList.toggle('dark-theme');
+};
 
 // Form Handling
-function handleFormSubmit(form) {
-    // Prevent default form submission
-    form.preventDefault();
-    const data = new FormData(form);
-    console.log('Form submitted with data:', Object.fromEntries(data));
-}
+const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    // Handle form submission
+};
+
+// Example usage
+const cart = new Cart();
+const wishlist = new Wishlist();
+const orders = new Orders();
+
+// Event Listeners
+document.querySelector('#formId').addEventListener('submit', handleFormSubmit);
+
+// Add more event listeners as needed
