@@ -75,6 +75,19 @@
         .dark .herb-card {
             background: linear-gradient(135deg, #065f46 0%, #047857 100%);
         }
+
+        .dashboard-container {
+            display: flex;          /* or grid */
+            flex-wrap: wrap;        /* allows items to move to next line */
+            gap: 20px;              /* spacing between cards */
+            justify-content: space-around; /* distributes cards evenly */
+        }
+        .dashboard-card {
+            flex: 1 1 250px;        /* grows/shrinks, min width 250px */
+            min-height: 150px;      /* prevents overlap vertically */
+            box-sizing: border-box; /* ensures padding doesn’t break layout */
+        }
+
         
         /* Text Motion Effects */
         .text-wave {
