@@ -3,61 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Premium organic turmeric powder sourced from sustainable farms. Rich in curcumin for anti-inflammatory benefits.">
   <title>Organic Turmeric Powder – ZenHerb</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-green-100 text-gray-800 font-sans">
-
+<body class="bg-green-50 text-gray-800 font-sans">
 
   <!-- Header -->
-<header class="bg-black text-white shadow-md">
-  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-    <div class="text-2xl font-bold">🌿 ZenHerb</div>
-    <nav class="space-x-6 text-sm font-medium">
-      <a href="index.html" class="hover:text-yellow-300">Home</a>
-      <a href="herbs.html" class="hover:text-yellow-300">Herbs</a>
-      <a href="courses.html" class="hover:text-yellow-300">Courses</a>
-      <a href="about.html" class="hover:text-yellow-300">About</a>
-      <a href="contact.html" class="hover:text-yellow-300">Contact</a>
-      <a href="cart.html" class="hover:text-yellow-300">Cart (0)</a>
-    </nav>
-  </div>
-</header>
-
+  <header class="bg-black text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold"><span aria-label="leaf emoji">🌿</span> ZenHerb</div>
+      <nav class="space-x-6 text-sm font-medium">
+        <a href="index.html" class="hover:text-yellow-300 transition">Home</a>
+        <a href="herbs.html" class="hover:text-yellow-300 transition">Herbs</a>
+        <a href="courses.html" class="hover:text-yellow-300 transition">Courses</a>
+        <a href="about.html" class="hover:text-yellow-300 transition">About</a>
+        <a href="contact.html" class="hover:text-yellow-300 transition">Contact</a>
+        <a href="cart.html" class="hover:text-yellow-300 transition">Cart (<span id="cartCount">0</span>)</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- Main Content -->
   <main class="max-w-4xl mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold text-yellow-700 mb-4">Organic Turmeric Powder</h1>
-    <img src="https://earthwebshop.com/us/wp-content/uploads/2020/05/Turmeric-Prop-1.jpg" alt="Organic Turmeric Powder" class="rounded-lg shadow-md mb-6 w-full h-64 object-cover">
+    <article class="bg-white rounded-lg shadow-lg p-6">
+      <h1 class="text-4xl font-bold text-yellow-600 mb-6">Organic Turmeric Powder</h1>
+      
+      <figure class="mb-8">
+        <img 
+          src="https://earthwebshop.com/us/wp-content/uploads/2020/05/Turmeric-Prop-1.jpg" 
+          alt="Organic Turmeric Powder in a wooden bowl" 
+          class="rounded-lg shadow-md w-full h-64 object-cover"
+          loading="lazy">
+        <figcaption class="text-sm text-gray-500 mt-2">Premium organic turmeric from sustainable farms</figcaption>
+      </figure>
 
-    <p class="text-lg mb-4">
-      Earth Organics' premium golden turmeric is known for its vibrant color and powerful anti-inflammatory properties. Sourced from sustainable farms, it's perfect for teas, cooking, and wellness rituals.
-    </p>
+      <section class="mb-8">
+        <p class="text-lg mb-4 leading-relaxed">
+          Earth Organics' premium golden turmeric is known for its vibrant color and powerful anti-inflammatory properties. Sourced from sustainable farms in India, it's perfect for teas, cooking, and wellness routines. Each batch is carefully selected and processed to preserve maximum curcumin content and nutritional value.
+        </p>
+      </section>
 
-    <ul class="list-disc list-inside mb-6 text-gray-700">
-      <li>100% organic and ethically sourced</li>
-      <li>Supports joint and immune health</li>
-      <li>Rich in curcumin, a natural anti-inflammatory</li>
-      <li>Perfect for golden milk, smoothies, and skincare</li>
-    </ul>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-4 text-gray-800">Key Benefits</h2>
+        <ul class="list-disc list-inside mb-6 text-gray-700 space-y-2">
+          <li>100% organic and ethically sourced</li>
+          <li>Supports joint and immune health</li>
+          <li>Rich in curcumin, a natural anti-inflammatory</li>
+          <li>Perfect for golden milk, smoothies, and skincare</li>
+        </ul>
+      </section>
 
-    <div class="flex items-center space-x-4">
-      <span class="text-xl font-semibold text-green-700">₹299 / 100g</span>
-      <button onclick="addToCart('Organic Turmeric Powder')" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition">
-        Add to Cart
-      </button>
-    </div>
+      <section class="border-t pt-6">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <p class="text-sm text-gray-500 mb-2">Price</p>
+            <span class="text-3xl font-bold text-green-600">₹299</span>
+            <span class="text-lg text-gray-600"> / 100g</span>
+          </div>
+          <button 
+            id="addToCartBtn"
+            class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold disabled:opacity-50"
+            aria-label="Add Organic Turmeric Powder to cart">
+            Add to Cart
+          </button>
+        </div>
+      </section>
+    </article>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-teal-100 mt-12 py-6 text-center text-sm text-gray-500">
+  <footer class="bg-teal-100 mt-12 py-6 text-center text-sm text-gray-600">
     © 2025 ZenHerb. All rights reserved.
   </footer>
 
   <script>
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const cartCountEl = document.getElementById('cartCount');
+    
+    addToCartBtn.addEventListener('click', function() {
+      try {
+        addToCart('Organic Turmeric Powder');
+        const currentCount = parseInt(cartCountEl.textContent) || 0;
+        cartCountEl.textContent = currentCount + 1;
+      } catch (error) {
+        console.error('Error adding to cart:', error);
+        alert('Failed to add item to cart. Please try again.');
+      }
+    });
+
     function addToCart(productName) {
-      alert(productName + " added to cart!");
-      // You can replace this with actual cart logic
+      // Replace with actual cart logic (API call, local storage, etc.)
+      console.log(productName + " added to cart!");
     }
   </script>
 </body>
